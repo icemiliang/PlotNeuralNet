@@ -14,7 +14,8 @@ def to_head(projectpath):
 
 def to_cor():
     return r"""
-            \def\ConvColor{rgb:yellow,5;red,2.5;white,5}
+            \def\ConvColor{rgb:green,5;red,2.5;white,5}
+            \def\ConvResColor{rgb:yellow,5;red,2.5;white,5}
             \def\ConvReluColor{rgb:yellow,5;red,5;white,5}
             \def\PoolColor{rgb:red,1;black,0.3}
             \def\UnpoolColor{rgb:blue,2;green,1;black,0.3}
@@ -62,7 +63,23 @@ def to_Conv(name, s_filer=256, n_filer=64, offset="(0,0,0)", to="(0,0,0)",
                     caption=""" + caption + r""",
                     xlabel={{""" + str(n_filer) + """, }},
                     zlabel=""" + str(s_filer) + """,
-                    fill=\ConvColor,
+                    fill=\ConvResColor,
+                    height=""" + str(height) + """,
+                    width=""" + str(width) + """,
+                    depth=""" + str(depth) + """
+                    }
+                };
+            """
+
+
+def to_ConvSimple(name, offset="(0,0,0)", to="(0,0,0)",
+            width=1, height=40, depth=40, caption=" "):
+    return r"""
+            \pic[shift={""" + offset + """}] at """ + to + """ 
+                {Box={
+                    name=""" + name + """,
+                    caption=""" + caption + r""",
+                    fill=\ConvResColor,
                     height=""" + str(height) + """,
                     width=""" + str(width) + """,
                     depth=""" + str(depth) + """
@@ -82,7 +99,7 @@ def to_ConvNew(name, s_filer=256, y_filer=256, n_filer=64, offset="(0,0,0)", to=
                     xlabel={{""" + str(n_filer) + """, }},
                     ylabel=""" + str(y_filer) + """,
                     zlabel=""" + str(s_filer) + """,
-                    fill=\ConvColor,
+                    fill=\ConvResColor,
                     height=""" + str(height) + """,
                     width=""" + str(width) + """,
                     depth=""" + str(depth) + """
@@ -100,9 +117,9 @@ def to_ConvConvRelu(name, s_filer=256, n_filer=(64,64), offset="(0,0,0)", to="(0
                 {RightBandedBox={
                     name=""" + name + """,
                     caption=""" + caption + """,
-                    xlabel={{ """ + str(n_filer[0]) + """, """ + str(n_filer[1]) + """ }},
+                    xlabel={{ """ + str(n_filer[0]) + """, """ + str(n_filer[1]) + """, }},
                     zlabel=""" + str(s_filer) + """,
-                    fill=\ConvColor,
+                    fill=\ConvResColor,
                     bandfill=\ConvReluColor,
                     height=""" + str(height) + """,
                     width={ """ + str(width[0]) + """ , """ + str(width[1]) + """ },
@@ -129,6 +146,24 @@ def to_Pool(name, offset="(0,0,0)", to="(0,0,0)", width=1, height=32, depth=32, 
             """
 
 
+# ReLU
+def to_relu(name, offset="(0,0,0)", to="(0,0,0)", width=1, height=32, depth=32, opacity=0.5, caption=" "):
+    return r"""
+            \pic[shift={ """ + offset + """ }] at """ + to + """ 
+                {Box={
+                    name=""" +name+ """,
+                    caption=""" + caption + r""",
+                    fill=\ConvReluColor,
+                    opacity=""" + str(opacity) + """,
+                    height=""" + str(height) + """,
+                    width=""" + str(width) + """,
+                    depth=""" + str(depth) + """
+                    }
+                };
+            """
+
+
+
 # unpool4, 
 def to_UnPool(name, offset="(0,0,0)", to="(0,0,0)", width=1, height=32, depth=32, opacity=0.5, caption=" "):
     return r"""
@@ -138,6 +173,23 @@ def to_UnPool(name, offset="(0,0,0)", to="(0,0,0)", width=1, height=32, depth=32
                     caption=""" + caption + r""",
                     fill=\UnpoolColor,
                     opacity=""" + str(opacity) + """,
+                    height=""" + str(height) + """,
+                    width=""" + str(width) + """,
+                    depth=""" + str(depth) + """
+                    }
+                };
+            """
+
+
+def to_UnPoolNew(name, offset="(0,0,0)", y_filer=256, to="(0,0,0)", width=1, height=32, depth=32, opacity=0.5, caption=" "):
+    return r"""
+            \pic[shift={ """ + offset + """ }] at """ + to + """ 
+                {Box={
+                    name=""" + name + r""",
+                    caption=""" + caption + r""",
+                    fill=\UnpoolColor,
+                    opacity=""" + str(opacity) + """,
+                    ylabel=""" + str(y_filer) + r""",
                     height=""" + str(height) + """,
                     width=""" + str(width) + """,
                     depth=""" + str(depth) + """
@@ -187,6 +239,79 @@ def to_ConvResNew(name, s_filer=256, y_filer=256, n_filer=64, offset="(0,0,0)", 
             """
 
 
+def to_ConvResSimple(name, n_filer=64, offset="(0,0,0)", to="(0,0,0)",
+               width=6, height=40, depth=40, opacity=0.2, caption=" "):
+    return r"""
+            \pic[shift={ """ + offset + """ }] at """ + to + """ 
+                {Box={
+                    name=""" + name + """,
+                    caption=""" + caption + """,
+                    xlabel={{ """ + str(n_filer) + """, }},
+                    fill={rgb:white,1;black,3},
+                    opacity=""" + str(opacity) + """,
+                    height=""" + str(height) + """,
+                    width=""" + str(width) + """,
+                    depth=""" + str(depth) + """
+                    }
+                };
+            """
+
+def to_ConvResSimpleSimple(name, offset="(0,0,0)", to="(0,0,0)",
+               width=6, height=40, depth=40, opacity=0.2, caption=" "):
+    return r"""
+            \pic[shift={ """ + offset + """ }] at """ + to + """ 
+                {Box={
+                    name=""" + name + """,
+                    caption=""" + caption + """,
+                    fill={rgb:white,1;black,3},
+                    opacity=""" + str(opacity) + """,
+                    height=""" + str(height) + """,
+                    width=""" + str(width) + """,
+                    depth=""" + str(depth) + """
+                    }
+                };
+            """
+
+
+def to_ConvResNew(name, s_filer=256, y_filer=256, n_filer=64, offset="(0,0,0)", to="(0,0,0)",
+               width=6, height=40, depth=40, opacity=0.2, caption=" "):
+    return r"""
+            \pic[shift={ """ + offset + """ }] at """ + to + """ 
+                {RightBandedBox={
+                    name=""" + name + """,
+                    caption=""" + caption + """,
+                    xlabel={{ """ + str(n_filer) + """, }},
+                    ylabel=""" + str(y_filer) + r""",
+                    zlabel=""" + str(s_filer) + r""",
+                    fill={rgb:white,1;black,3},
+                    bandfill={rgb:white,1;black,2},
+                    opacity=""" + str(opacity) + """,
+                    height=""" + str(height) + """,
+                    width=""" + str(width) + """,
+                    depth=""" + str(depth) + """
+                    }
+                };
+            """
+
+def to_ConvReluSimple(name, s_filer=256, n_filer=64, offset="(0,0,0)", to="(0,0,0)",
+                width=2, height=40, depth=40, caption=" "):
+    return r"""
+            \pic[shift={ """ + offset + """ }] at """ + to + """ 
+                {RightBandedBox={
+                    name=""" + name + """,
+                    caption=""" + caption + """,
+                    xlabel={{ """ + str(n_filer) + """, }},
+                    zlabel=""" + str(s_filer) + """,
+                    fill=\ConvResColor,
+                    bandfill=\ConvReluColor,
+                    height=""" + str(height) + """,
+                    width={ """ + str(width) + """ },
+                    depth=""" + str(depth) + """
+                    }
+                };
+            """
+
+
 # ConvSoftMax
 def to_ConvSoftMax(name, s_filer=40, offset="(0,0,0)", to="(0,0,0)", width=1, height=40, depth=40, caption=" "):
     return r"""
@@ -214,6 +339,43 @@ def to_SoftMax(name, s_filer=10, offset="(0,0,0)", to="(0,0,0)",
                     caption=""" + caption + """,
                     xlabel={{" ","dummy"}},
                     zlabel=""" + str(s_filer) + """,
+                    fill=\SoftmaxColor,
+                    opacity=""" + str(opacity) + """,
+                    height=""" + str(height) + """,
+                    width=""" + str(width) + """,
+                    depth=""" + str(depth) + """
+                    }
+                };
+            """
+
+
+def to_SoftMaxNew(name, s_filer=10, y_filer=10, n_filer=10, offset="(0,0,0)", to="(0,0,0)",
+               width=1.5, height=3, depth=25, opacity=0.8, caption=" "):
+    return r"""
+            \pic[shift={""" + offset + """}] at """ + to + """ 
+                {Box={
+                    name=""" + name + """,
+                    caption=""" + caption + """,
+                    xlabel={{ """ + str(n_filer) + """, }},
+                    ylabel=""" + str(y_filer) + """,
+                    zlabel=""" + str(s_filer) + """,
+                    fill=\SoftmaxColor,
+                    opacity=""" + str(opacity) + """,
+                    height=""" + str(height) + """,
+                    width=""" + str(width) + """,
+                    depth=""" + str(depth) + """
+                    }
+                };
+            """
+
+
+def to_SoftMaxSimple(name, offset="(0,0,0)", to="(0,0,0)",
+               width=1.5, height=3, depth=25, opacity=0.8, caption=" "):
+    return r"""
+            \pic[shift={""" + offset + """}] at """ + to + """ 
+                {Box={
+                    name=""" + name + """,
+                    caption=""" + caption + """,
                     fill=\SoftmaxColor,
                     opacity=""" + str(opacity) + """,
                     height=""" + str(height) + """,
@@ -274,9 +436,9 @@ def to_ConvRelu(name, s_filer=256, n_filer=64, offset="(0,0,0)", to="(0,0,0)",
                 {RightBandedBox={
                     name=""" + name + """,
                     caption=""" + caption + """,
-                    xlabel={{ """ + str(n_filer) + """ }},
+                    xlabel={{ """ + str(n_filer) + """, }},
                     zlabel=""" + str(s_filer) + """,
-                    fill=\ConvColor,
+                    fill=\ConvResColor,
                     bandfill=\ConvReluColor,
                     height=""" + str(height) + """,
                     width={ """ + str(width) + """ },
@@ -293,7 +455,27 @@ def to_ConvReluNew(name, s_filer=256, y_filer=256, n_filer=64, offset="(0,0,0)",
                 {RightBandedBox={
                     name=""" + name + """,
                     caption=""" + caption + """,
-                    xlabel={{ """ + str(n_filer) + """ }},
+                    xlabel={{ """ + str(n_filer) + """, }},
+                    ylabel=""" + str(y_filer) + """,
+                    zlabel=""" + str(s_filer) + """,
+                    fill=\ConvResColor,
+                    bandfill=\ConvReluColor,
+                    height=""" + str(height) + """,
+                    width={ """ + str(width) + """ },
+                    depth=""" + str(depth) + """
+                    }
+                };
+            """
+
+
+def to_ConvReluNewColor(name, s_filer=256, y_filer=256, n_filer=64, offset="(0,0,0)", to="(0,0,0)",
+                width=2, height=40, depth=40, caption=" "):
+    return r"""
+            \pic[shift={ """ + offset + """ }] at """ + to + """ 
+                {RightBandedBox={
+                    name=""" + name + """,
+                    caption=""" + caption + """,
+                    xlabel={{ """ + str(n_filer) + """, }},
                     ylabel=""" + str(y_filer) + """,
                     zlabel=""" + str(s_filer) + """,
                     fill=\ConvColor,
@@ -304,6 +486,23 @@ def to_ConvReluNew(name, s_filer=256, y_filer=256, n_filer=64, offset="(0,0,0)",
                     }
                 };
             """
+
+
+def to_ConvReluNewColorLegend(name, offset="(0,0,0)", to="(0,0,0)",
+                width=2, height=40, depth=40, caption=" "):
+    return r"""
+            \pic[shift={ """ + offset + """ }] at """ + to + """ 
+                {Box={
+                    name=""" + name + """,
+                    caption=""" + caption + """,
+                    fill=\ConvColor,
+                    height=""" + str(height) + """,
+                    width={ """ + str(width) + """ },
+                    depth=""" + str(depth) + """
+                    }
+                };
+            """
+
 
 
 # define new block
@@ -341,9 +540,9 @@ def block_3ConvPool(name, botton, top, s_filer=256, n_filer=(64, 64, 64), offset
                    s_filer=str(s_filer), n_filer=str(n_filer), width=size[2], height=size[0], depth=size[1],
                    opacity=opacity),
         to_Pool(
-            name="{}".format( top ),
+            name="{}".format(top),
             offset="(0,0,0)",
-            to="(ccr_{}-east)".format( name ),
+            to="(ccr_{}-east)".format(name),
             width=1,
             height=size[0] - int(size[0]/4),
             depth=size[1] - int(size[0]/4),
