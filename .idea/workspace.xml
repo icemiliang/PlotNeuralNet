@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="776fe343-0ed9-4619-bd19-7a1b6f20e48a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/HED/HED.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/examples/HED/HED.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/HED/HED.tex" beforeDir="false" afterPath="$PROJECT_DIR$/examples/HED/HED.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pycore/blocks.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pycore/tikzeng.py" beforeDir="false" afterPath="$PROJECT_DIR$/pycore/tikzeng.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyexamples/unet.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyexamples/unet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tikzmake.sh" beforeDir="false" afterPath="$PROJECT_DIR$/tikzmake.sh" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,12 +13,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pyexamples/unet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="815">
-              <caret line="130" column="34" selection-start-line="130" selection-start-column="34" selection-end-line="130" selection-end-column="34" />
+            <state relative-caret-position="180">
+              <caret line="12" column="82" selection-start-line="12" selection-start-column="82" selection-end-line="12" selection-end-column="82" />
             </state>
           </provider>
         </entry>
@@ -30,8 +26,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pycore/tikzeng.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="228" column="59" selection-start-line="228" selection-start-column="59" selection-end-line="228" selection-end-column="59" />
+            <state relative-caret-position="825">
+              <caret line="55" column="49" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -40,8 +36,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ccr_b1-west</find>
-      <find>west</find>
       <find>top</find>
       <find>ccr_</find>
       <find>ccr_res_</find>
@@ -70,6 +64,8 @@
       <find>to_conv</find>
       <find>skipN</find>
       <find>b0</find>
+      <find>softmax</find>
+      <find>offset</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;&quot;&quot; +</replace>
@@ -119,6 +115,29 @@
             <path>
               <item name="PlotNeuralNet" type="b2602c69:ProjectViewProjectNode" />
               <item name="PlotNeuralNet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PlotNeuralNet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PlotNeuralNet" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PlotNeuralNet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PlotNeuralNet" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="fcn32s" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PlotNeuralNet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PlotNeuralNet" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="HED" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PlotNeuralNet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PlotNeuralNet" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="SoftmaxLoss" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PlotNeuralNet" type="b2602c69:ProjectViewProjectNode" />
@@ -174,18 +193,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1536764917516</updated>
-      <workItem from="1567910580411" duration="22200000" />
+      <workItem from="1567910580411" duration="28110000" />
+      <workItem from="1568108566490" duration="11000" />
+      <workItem from="1568397770375" duration="252000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22200000" />
+    <option name="totallyTimeSpent" value="28373000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-4" width="1857" height="1085" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25262576" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25815368" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
@@ -224,13 +245,7 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pycore/blocks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/pycore/blocks.py" />
     <entry file="file://$PROJECT_DIR$/tikzmake.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -238,13 +253,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pyexamples/unet.tex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="39" column="69" selection-start-line="39" selection-start-column="69" selection-end-line="39" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/pyexamples/unet.tex" />
     <entry file="file://$PROJECT_DIR$/layers/Box.sty">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -280,17 +289,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pycore/tikzeng.py">
+    <entry file="file://$PROJECT_DIR$/examples/fcn32s/fcn32.tex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="228" column="59" selection-start-line="228" selection-start-column="59" selection-end-line="228" selection-end-column="59" />
-        </state>
+        <state relative-caret-position="-681" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pyexamples/unet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="815">
-          <caret line="130" column="34" selection-start-line="130" selection-start-column="34" selection-end-line="130" selection-end-column="34" />
+        <state relative-caret-position="180">
+          <caret line="12" column="82" selection-start-line="12" selection-start-column="82" selection-end-line="12" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pycore/tikzeng.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="55" column="49" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="49" />
         </state>
       </provider>
     </entry>

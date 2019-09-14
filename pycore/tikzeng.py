@@ -44,6 +44,14 @@ def to_input(pathfile, to='(-3,0,0)', width=8, height=8, name="temp"):
             """
 
 
+# layers definition
+def to_inputNew(pathfile, offset="(0,0,0)", to='(-3,0,0)', width=8, height=8, name="temp"):
+    return r"""
+            \node[canvas is zy plane at x=0] (""" + name + """)  at """ + to + """ {\includegraphics[width=""" + \
+           str(width)+"cm" + """,height=""" + str(height)+"cm" + """]{""" + pathfile + """}};
+            """
+
+
 # Conv
 def to_Conv(name, s_filer=256, n_filer=64, offset="(0,0,0)", to="(0,0,0)",
             width=1, height=40, depth=40, caption=" "):
